@@ -27,9 +27,9 @@
   }
 
   .btn-toolbar {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: 100px;
     position: fixed;
     top: 20px;
     left: 20px;
