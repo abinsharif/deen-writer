@@ -42,7 +42,7 @@
   .dropdown .dropdown-toggle::after {
     display: none;
   }
-.dropdown {
+.menu {
     width: 50px;
 }
   .dropdown-menu {
