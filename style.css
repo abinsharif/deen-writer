@@ -29,7 +29,7 @@
   .btn-toolbar {
     display: grid;
     grid-row-gap: 10px;
-    grid-template-columns: 100px;
+    grid-template-columns: 10px;
     position: fixed;
     top: 20px;
     left: 20px;
