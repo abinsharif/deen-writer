@@ -1,14 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Test website</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deen Writer</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
 </head>
 <body>
-	<h1>This website is for testing</h1>
-    <p>sample text</p>
-	<script type="text/javascript" src="script.js"></script>
+  <div class="container mt-4">
+    <div class="btn-toolbar mb-3">
+      <div class="dropdown">
+        <button class="btn btn-outline-danger dropdown-toggle" type="button" id="fileMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">File</button>
+        <div class="dropdown-menu" aria-labelledby="fileMenu">
+          <button class="dropdown-item" id="new-btn">New</button>
+          <button class="dropdown-item" id="open-btn">Open</button>
+          <button class="dropdown-item" id="make-copy-btn">Make a Copy</button>
+          <button class="dropdown-item" id="share-btn">Share</button>
+          <button class="dropdown-item" id="email-btn">Email</button>
+          <button class="dropdown-item" id="download-html-btn">Download as HTML</button>
+          <button class="dropdown-item" id="download-txt-btn">Download as TXT</button>
+          <button class="dropdown-item" id="download-pdf-btn">Download as PDF</button>
+          <button class="dropdown-item" id="download-docx-btn">Download as DOCX</button>
+          <button class="dropdown-item" id="page-setup-btn">Page Setup</button>
+          <button class="dropdown-item" id="print-btn">Print</button>
+        </div>
+      </div>
+    
+      <div class="dropdown">
+        <button class="btn btn-outline-dark dropdown-toggle" type="button" id="editMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit</button>
+        <div class="dropdown-menu" aria-labelledby="editMenu">
+          <button class="dropdown-item" id="cut-btn">Cut</button>
+          <button class="dropdown-item" id="copy-btn">Copy</button>
+          <button class="dropdown-item" id="paste-btn">Paste</button>
+          <button class="dropdown-item" id="undo-btn">Undo</button>
+          <button class="dropdown-item" id="redo-btn">Redo</button>
+          <button class="dropdown-item" id="find-btn">Find</button>
+          <button class="dropdown-item" id="replace-btn">Replace</button>
+          <button class="dropdown-item" id="select-all-btn">Select All</button>
+        </div>
+      </div>
+    
+      <div class="dropdown">
+        <button class="btn btn-outline-warning dropdown-toggle" type="button" id="insertMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Insert</button>
+        <div class="dropdown-menu" aria-labelledby="insertMenu">
+          <button class="dropdown-item" id="insert-image-btn">Image</button>
+          <button class="dropdown-item" id="insert-table-btn">Table</button>
+          <button id="link-btn" class="dropdown-item">Link</button>
+          <button class="dropdown-item" id="insert-dropdown-btn">Dropdown</button>
+          <button class="dropdown-item" id="insert-emoji-btn">Emoji</button>
+          <button class="dropdown-item" id="bullet-list-btn">Bullet List</button>
+          <button class="dropdown-item" id="number-list-btn">Number List</button>
+        </div>
+      </div>
+    
+      <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle" type="button" id="formatMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Format</button>
+        <div class="dropdown-menu" aria-labelledby="formatMenu">
+          <div class="btn-group">
+            <button class="dropdown-item fas fa-bold" id="bold-btn"></button>
+            <button class="dropdown-item fas fa-italic" id="italic-btn"></button>
+            <button class="dropdown-item fas fa-underline" id="underline-btn"></button>
+            <button class="dropdown-item fas fa-strikethrough" id="strike-btn"></button>
+            <button class="dropdown-item fas fa-superscript" id="superscript-btn"></button>
+            <button class="dropdown-item fas fa-subscript" id="subscript-btn"></button>
+          </div>
+          <button class="dropdown-item" id="capitalization-btn">Capitalization</button>
+          <div class="btn-group">
+            <button class="dropdown-item" id="align-left-btn"><i class="fas fa-align-left"></i></button>
+            <button class="dropdown-item" id="align-center-btn"><i class="fas fa-align-center"></i></button>
+            <button class="dropdown-item" id="align-right-btn"><i class="fas fa-align-right"></i></button>
+            <button class="dropdown-item" id="justify-btn"><i class="fas fa-align-justify"></i></button>
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item">
+            <label>Font:</label>
+            <select id="font-select" class="form-control">
+              <option value="Arial">Arial</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Courier New">Courier New</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Palatino">Palatino</option>
+              <option value="Garamond">Garamond</option>
+              <option value="Comic Sans MS">Comic Sans MS</option>
+              <option value="Trebuchet MS">Trebuchet MS</option>
+              <option value="Verdana">Verdana</option>
+              <option value="Impact">Impact</option>
+              <option value="Calibri">Calibri</option>
+              <option value="Cambria">Cambria</option>
+              <option value="Segoe UI">Segoe UI</option>
+              <option value="Open Sans">Open Sans</option>
+              <option value="Lato">Lato</option>
+            </select>
+          </div>
+      
+          <div class="dropdown-item">
+            <label>Font Size:</label>
+            <select id="font-size-select" class="form-control">
+              <option value="1">8px</option>
+              <option value="2">10px</option>
+              <option value="3">12px</option>
+              <option value="4">14px</option>
+              <option value="5">18px</option>
+              <option value="6">24px</option>
+              <option value="7">36px</option>
+              <option value="custom">Custom</option>
+            </select>
+            <input type="number" id="custom-font-size" class="form-control" min="1" max="150" value="16">
+          </div>
+      
+          <div class="dropdown-item">
+            <label>Color:</label>
+            <input type="color" id="color-input" class="form-control">
+          </div>
+      
+          <div class="dropdown-item">
+            <label>Highlight:</label>
+            <input type="color" id="highlight-input" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+          Mode
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" id="edit-mode-btn">Edit Mode</a></li>
+          <li><a class="dropdown-item" id="view-mode-btn">View Mode</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <input type="text" id="name-input" class="form-control mb-3" placeholder="Enter document name">
+    <div id="editor" contenteditable="true"></div>
+  </div>
+
+  <div class="fixed-buttons">
+    <button id="save-btn" class="btn btn-outline-primary">Save</button>
+    <button id="load-btn" class="btn btn-outline-info">Load</button>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docxtemplater@3.23.3/build/docxtemplater.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.2.2/dist/jszip.min.js"></script>
+  <script src="scripts.js">
+  </script>
 </body>
 </html>
