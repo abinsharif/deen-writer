@@ -43,6 +43,7 @@
   }
 .menu {
     width: 80px;
+    margin-bottom: 10px;
 }
   .dropdown-menu {
     padding: 10px;
